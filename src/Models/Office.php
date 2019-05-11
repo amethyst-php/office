@@ -28,7 +28,7 @@ class Office extends Model implements EntityContract
      */
     public function address(): BelongsTo
     {
-        return $this->belongsTo(Address::class);
+        return $this->belongsTo(config('amethyst.address.data.address.model'));
     }
 
     /**
@@ -36,6 +36,6 @@ class Office extends Model implements EntityContract
      */
     public function company(): BelongsTo
     {
-        return $this->belongsTo(Company::class);
+        return $this->belongsTo(config('amethyst.company.data.company.model'));
     }
 }
