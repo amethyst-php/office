@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="/amethyst-office/">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Rubik|Open Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src='https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js'></script>
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <link href='style.css' rel='stylesheet'>
+</head>
+<body>
+  <header>
+    <a class="btn purple">Switch to frontend docs</a>
+  </header>
+  <main>
+    <div class="sidebar" style='display: flex'>
+      <div style='flex-grow: 1'>
+      </div>
+      <div class="navigation">
+        <ul>
+          <li><a href=''>Introduction</a></li>
+                    <li><a href='entity/office/'>office</a></li>
+                  </ul>
+      </div>
+    </div>
+    <div class="container">
+      <div class="content">
+        <h2>Result</h2>
+
+<p>Once you've got the result you should always check if an error has occurred, if not, retrieve the resource.</p>
+
+<pre><code class="php">use Railken\Amethyst\Managers\OfficeManager;
+
+$manager = new OfficeManager();
+
+$result = $manager-&gt;create([
+    "name" =&gt; "Mr. Boyd Lesch",
+    "description" =&gt; "Et iste culpa ad quae. Modi rem et sunt enim. Quod ut minima et perferendis et et rem. Odit quis impedit eaque dolorem. Nihil est mollitia illo accusamus. Totam culpa debitis quia consequatur.",
+    "address" =&gt; [
+        "street" =&gt; "21646 Kautzer Landing",
+        "zip_code" =&gt; "84854",
+        "city" =&gt; "Hyattstad",
+        "province" =&gt; "TX",
+        "country" =&gt; "US"
+    ],
+    "company" =&gt; [
+        "name" =&gt; "Brice Grady",
+        "description" =&gt; "Rerum mollitia aliquid et quis voluptas. Excepturi et quasi quis voluptatem recusandae nesciunt. Ullam nam quam id. Provident laboriosam vitae est rerum quia non facilis.",
+        "legal_entity" =&gt; [
+            "name" =&gt; "Dr. Kane WisokykCHQe18ffCn1xwLGcpV4",
+            "country" =&gt; "US",
+            "code_vat" =&gt; "203458239B01",
+            "code_tin" =&gt; "203458239B01",
+            "registered_office_address" =&gt; [
+                "street" =&gt; "3684 Kenny Gateway",
+                "zip_code" =&gt; "66403-5905",
+                "city" =&gt; "Shayleefurt",
+                "province" =&gt; "OK",
+                "country" =&gt; "US"
+            ],
+            "type" =&gt; [
+                "name" =&gt; "Ibrahim Jakubowski",
+                "description" =&gt; "Facilis quis et qui. Quae omnis deserunt qui quo et. Voluptate illo sint nobis dolor. Similique nihil distinctio enim alias facere dignissimos occaecati.",
+                "enabled" =&gt; 1,
+                "weight" =&gt; 1,
+                "parent" =&gt; [
+                    "name" =&gt; "LEGAL_ENTITY",
+                    "description" =&gt; "Sint eaque est debitis totam deleniti. Perspiciatis deleniti enim ipsum dolore. Ratione at et est sit illum quis aut. Sint nobis mollitia alias asperiores.",
+                    "enabled" =&gt; 1,
+                    "weight" =&gt; 1
+                ]
+            ]
+        ]
+    ]
+]);
+
+if ($result-&gt;ok()) {
+
+    $resource = $result-&gt;getResource();
+
+} else {
+
+    // Loop through all errors
+    $result-&gt;getErrors()-&gt;map(function($error) {
+        return $error-&gt;toArray();
+    }))
+
+    // Retrieve an array of all errors
+    $result-&gt;getSimpleErrors();
+
+    /* The result is something like this:
+
+        [0] =&gt; Array
+            (
+                [code] =&gt; FIELD_NOT_DEFINED
+                [label] =&gt; field
+                [message] =&gt; The field is required
+                [value] =&gt;
+            )
+    */
+
+}
+</code></pre>
+
+<hr />
+
+<p><a href="index.html">Back</a></p>
+
+      </div>
+    </div>
+  </main>
+</body>
+</html>
