@@ -1,9 +1,9 @@
 <?php
 
-namespace Railken\Amethyst\Schemas;
+namespace Amethyst\Schemas;
 
-use Railken\Amethyst\Managers\AddressManager;
-use Railken\Amethyst\Managers\CompanyManager;
+use Amethyst\Managers\AddressManager;
+use Amethyst\Managers\CompanyManager;
 use Railken\Lem\Attributes;
 use Railken\Lem\Schema;
 
