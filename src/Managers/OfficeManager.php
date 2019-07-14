@@ -6,12 +6,12 @@ use Amethyst\Common\ConfigurableManager;
 use Railken\Lem\Manager;
 
 /**
- * @method \Amethyst\Models\Office newEntity()
- * @method \Amethyst\Schemas\OfficeSchema getSchema()
+ * @method \Amethyst\Models\Office                 newEntity()
+ * @method \Amethyst\Schemas\OfficeSchema          getSchema()
  * @method \Amethyst\Repositories\OfficeRepository getRepository()
- * @method \Amethyst\Serializers\OfficeSerializer getSerializer()
- * @method \Amethyst\Validators\OfficeValidator getValidator()
- * @method \Amethyst\Authorizers\OfficeAuthorizer getAuthorizer()
+ * @method \Amethyst\Serializers\OfficeSerializer  getSerializer()
+ * @method \Amethyst\Validators\OfficeValidator    getValidator()
+ * @method \Amethyst\Authorizers\OfficeAuthorizer  getAuthorizer()
  */
 class OfficeManager extends Manager
 {
