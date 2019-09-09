@@ -14,7 +14,7 @@ class CreateOfficesTable extends Migration
     {
         Schema::create(Config::get('amethyst.office.data.office.table'), function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
+            $table->string('name')->index();
             $table->text('description')->nullable();
             $table->integer('address_id')->unsigned()->nullable();
             $table->foreign('address_id')->references('id')->on(Config::get('amethyst.address.data.address.table'));
