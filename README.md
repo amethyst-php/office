@@ -1,6 +1,6 @@
 # amethyst-office
 
-[![Build Status](https://travis-ci.org/amethyst-php/office.svg?branch=master)](https://travis-ci.org/amethyst-php/office)
+[![Action Status](https://github.com/amethyst-php/office/workflows/test/badge.svg)](https://github.com/amethyst-php/office/actions)
 
 [Amethyst](https://github.com/amethyst-php/amethyst) package.
 
